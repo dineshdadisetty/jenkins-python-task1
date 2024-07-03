@@ -24,10 +24,10 @@ pipeline {
     environment {
 
         //docker hub
-        registry = "clintonpillay7/flaskapp"
+        registry = "dineshdadisetty/flaskapp"
 
         // jenkins credential ID
-        registryCredential = 'dockerhub'
+        registryCredential = 'dineshdadisetty'
         dockerImage = ''
     }
     
@@ -35,7 +35,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_user', url: 'https://github.com/clinton-pillay7/flask-docker']])       
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_user', url: 'https://github.com/clinton-pillay7/flask-docker']])       
             }
         }
     
