@@ -1,20 +1,3 @@
-# syntax=docker/dockerfile:1
-
-FROM python:3.10.12-slim-bullseye
-WORKDIR /python-docker
-
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
-COPY . .
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-2. I’ve uploaded this code to a GITHUB repo.
-
-3. In Jenkins I have written my declarative syntax, consisting of the following:
-
-Comments have been added to add explanation to my code:
-
 pipeline {
     
     // run on any available agent in the jenkins environment
